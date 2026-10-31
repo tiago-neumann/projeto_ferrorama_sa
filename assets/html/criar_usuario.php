@@ -30,7 +30,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="botao extensao_botao">Criar conta</button>
+                <button type="submit" class="botao extensao_botao"><i class="fa-solid fa-plus"></i> Criar conta</button>
             </form>
         </div>
     </div>

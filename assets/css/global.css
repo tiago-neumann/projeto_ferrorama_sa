@@ -471,6 +471,10 @@ footer {
     width: 100%;
 }
 
+option{
+    color: var(--cor-texto-escuro);
+}
+
 .input_padrao::placeholder {
     color: var(--cor-texto-esmaecido);
     font-weight: lighter;

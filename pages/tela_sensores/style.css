@@ -1,75 +1,113 @@
-.container{
-    display: grid;
-    grid-template-columns: 1fr;
+.topo_sensores{
+    display: flex;
+    justify-content: space-between;
 
-    background: var(--cor-vidro);
-    border-radius: 16px;
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
 
-    box-shadow: var(--sombra-vidro);
+.topo_sensores div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.topo_sensores label{
+    margin-right: 10px;
+}
+
+.topo_sensores label i{
+    color: var(--cor-texto);
+    font-size: 1.5rem;
+}
+
+.tabela_sensores{
+    border-radius: 12px;
     padding: 10px;
 }
 
-.legendas{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.legendas h6{
-    display: flex;
-    justify-content: center;
+.lista_sensores{
+    height: calc(100vh - 250px);
+    padding: 10px;
 
     color: var(--cor-texto);
+    border-radius: 12px;
+
+    overflow-y: auto;
 }
 
-.dados{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    gap: 10px;
-}
-
-.dados p{
-    font-size: clamp(0.7rem, 1vw, 1.5rem);
-    color: var(--cor-texto);
-    font-weight: bold;
-}
-
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+.lista_sensores table{
     width: 100%;
-    height: 100%;
-
-    padding: 10px;
-
-    background-color: var(--cor-vidro-azul);
-    border-radius: 6px;
-
-    box-shadow: var(--sombra-vidro);
 }
 
-.leitura{
-    align-items: start;
+.lista_sensores th{
+    width: 25%;
 }
 
-.inputs{
-    position: fixed;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 5px;
-
-    left: 50%;
-    top: 88%;
-    transform: translate(-50%, -50%);
-}
-
-.inputs input::placeholder{
+.lista_sensores td, .lista_sensores th{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
+    padding: 10px;
+}
+
+.lista_sensores td:first-child{
+    padding-left: 50px;
+    text-align: start;
+}
+
+.lista_sensores td{
+    position: relative;
+}
+
+.btn_editar{
+    position: absolute;
+
+    transform: translateY(-50%);
+    left: 10px;
+    top: 50%;
+
+    padding-right: 10px;
+    
+
+    background: none;
+    border: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+
+    color: var(--cor-texto);
+    cursor: pointer;
+
+    transition: var(--transition-fast);
+}
+
+.btn_editar:hover{
+    color: var(--cor-azul)
+}
+
+.btn_editar:active{
+    color: var(--cor-texto);
+}
+
+.btn_excluir{
+    position: absolute;
+
+    transform: translateY(-50%);
+    right: 10px;
+    top: 50%;
+
+    background: none;
+    border: none;
+
+    color: var(--cor-texto);
+    cursor: pointer;
+
+    transition: var(--transition-fast);
+}
+
+.btn_excluir:hover{
+    color: var(--cor-erro);
+}
+
+.btn_excluir:active{
+    color: var(--cor-texto);
 }

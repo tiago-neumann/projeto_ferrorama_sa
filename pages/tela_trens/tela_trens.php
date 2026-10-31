@@ -58,7 +58,7 @@ $resultado = $conexao->query($sql);
 
         <div class="container">
 
-            <button id="criar_trem" class="botao">Adicionar Trem</button>
+            <button id="criar_trem" class="botao"><i class="fa-solid fa-plus"></i> Adicionar Trem</button>
 
             <?php while ($trem = $resultado->fetch_assoc()): ?>
 

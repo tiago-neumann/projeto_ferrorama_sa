@@ -79,7 +79,7 @@ $resultado_linhas = $conexao->query('SELECT id_linha, nome_linha FROM linha ORDE
                     </div>
                 </div>
 
-                <button type="submit" class="botao extensao_botao">Salvar Alterações</button>
+                <button type="submit" class="botao extensao_botao"><i class="fa-solid fa-check"></i> Salvar Alterações</button>
             </form>
         </div>
     </div>

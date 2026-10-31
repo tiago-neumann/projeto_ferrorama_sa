@@ -59,7 +59,7 @@ $resultado = $conexao->query($sql);
     <main>
 
         <div class="container">
-            <button class="botao" id="criar_usuario">Novo Usuário</button>
+            <button class="botao" id="criar_usuario"><i class="fa-solid fa-plus"></i> Novo Usuário</button>
 
         <?php while ($usuario = $resultado->fetch_assoc()): ?>
 
@@ -73,11 +73,11 @@ $resultado = $conexao->query($sql);
                 </div>
                 <div class="opcoes">
 
-                    <button type="button" class="botao editar_usuario" data-id="<?= $usuario['id_usuario'] ?>">Editar</button>
+                    <button type="button" class="botao editar_usuario" data-id="<?= $usuario['id_usuario'] ?>"><i class="fa-solid fa-pen-to-square"></i> Editar</button>
                     
                     <form action="../../assets/php/excluir_usuario.php" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir essa conta?');">
                         <input type="hidden" name="id_usuario" value="<?= $usuario['id_usuario'] ?>">
-                        <button type="submit" class="botao">Excluir</button>
+                        <button type="submit" class="botao"><i class="fa-solid fa-x"></i> Excluir</button>
                     </form>
                 </div>
             </div>

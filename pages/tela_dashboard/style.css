@@ -9,7 +9,7 @@
 
 .status_trens {
     display: flex;
-    grid-column: 1/4;
+    grid-column: span 4;
 
     border-radius: 12px;
 
@@ -32,7 +32,7 @@
 }
 
 .status i{
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 
@@ -125,12 +125,19 @@
 
 .grafico_trens{
     display: flex;
+    flex-direction: column;
 
-    grid-column: 1/4;
+    grid-column: span 4;
 
     border-radius: 12px;
 
     padding: 10px;
+}
+
+.bloco_grafico{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .grafico {
@@ -148,11 +155,11 @@
     );
 
     margin: 10px;
-    margin-right: 50px;
 }
 
 .dados_grafico{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -167,12 +174,14 @@
     width: 100%;
 }
 
-.dados_grafico th, .dados_grafico td{
+.dados_grafico tr{
+    font-size: 0.8rem;
+}
 
+.dados_grafico th, .dados_grafico td{
     padding: 12px 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
-
 }
 
 .dados_grafico td:first-child {
@@ -192,7 +201,7 @@
 }
 
 .lista_trens{
-    grid-column: 1/4;
+    grid-column: span 4;
 
     border-radius: 12px;
     padding: 10px;
@@ -202,10 +211,12 @@
 
 .topo_lista_trens{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 
-    margin-bottom: 20px;
+    margin: 0px;
 }
 
 .topo_lista_trens div{
@@ -220,11 +231,32 @@
     color: var(--cor-texto);
 }
 
+.lista_trens_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pesquisa{
+    display: inline-flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.pesquisa label{
+    display: none;
+}
+
+.input_padrao{
+    min-width: 280px;
+}
+
 .catalogo{
     border-radius: 12px;
     padding: 10px;
 
-    height: 350px;
+    height: 310px;
     overflow-y: auto;
 
     scrollbar-color: var(--cor-texto) transparent;
@@ -282,30 +314,79 @@
 }
 
 .aviso{
-    grid-row: 1/3;
-    grid-column: 4;
+    grid-row: auto;
+    grid-column: span 4;
 
     border-radius: 12px;
     padding: 10px;
 }
 
 .ocorrencias{
+    grid-column: span 4;
+
     border-radius: 12px;
     padding: 10px;
 }
 
-@media (max-width: 780px){
+@media (min-width: 1024px){
 
     .status_trens{
-        grid-column: -1 / 1;
+        grid-column: 1/4;
     }
 
     .status i{
-        display: none;
+        display: flex;
     }
 
     .grafico_trens{
-        grid-column: -1/1;
-        flex-direction: column;
+        grid-column: 1/4;
+        flex-direction: row;
     }
+
+    .bloco_grafico{
+        align-items: start;
+    }
+
+    .grafico{
+        margin-right: 50px;
+    }
+
+    .dados_grafico{
+        padding: 20px;
+    }
+
+    .dados_grafico tr{
+        font-size: 1rem;
+    }
+
+    .lista_trens{
+        grid-column: 1/4;
+    }
+
+    .topo_lista_trens{
+        flex-direction: row;
+        margin-bottom: 10px;
+    }
+
+    .lista_trens_info{
+        align-items: start;
+    }
+
+    .pesquisa label{
+        display: flex;
+    }
+
+    .catalogo{
+        height: 350px;
+    }
+
+    .aviso{
+        grid-column: 4;
+        grid-row: 1/3;
+    }
+
+    .ocorrencias{
+        grid-column: auto;
+    }
+
 }

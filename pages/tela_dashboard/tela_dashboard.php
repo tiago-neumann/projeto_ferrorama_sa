@@ -132,7 +132,7 @@ $limiteAtivos = 100;
             </div>
 
             <div class="grafico_trens estilo_primario">
-                <div>
+                <div class="bloco_grafico">
                     <p><strong>Estado dos Trens</strong></p>
                     <small>Distribuição da frota por status</small>
 
@@ -171,13 +171,15 @@ $limiteAtivos = 100;
 
             <div class="lista_trens estilo_primario">
                 <div class="topo_lista_trens">
-                    <div>
+                    <div class="lista_trens_info">
                         <p><strong>Catálogo de Trens</strong></p>
                         <small>Todos os trens cadastrados no sistema</small>
                     </div>
 
-                    <label for="pesquisa"><i class="fa-solid fa-magnifying-glass"></i></label>
-                    <input class="input_padrao estilo_secundario" type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise um trem">
+                    <div class="pesquisa">
+                        <label for="pesquisa"><i class="fa-solid fa-magnifying-glass"></i></label>
+                        <input class="input_padrao estilo_secundario" type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise um trem">
+                    </div>
                 </div>
 
                 <div class="catalogo estilo_secundario">

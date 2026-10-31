@@ -47,7 +47,7 @@ $resultado = $conexao->query($sql);
 
                         <?php while ($linha = $resultado->fetch_assoc()):?>
 
-                            <option value="<?= (int) $linha['id_linha']?>"> <?= htmlspecialchars($linha['nome_linha'])?></option>
+                            <option value="<?= $linha['id_linha']?>"> <?= htmlspecialchars($linha['nome_linha'])?></option>
 
                         <?php endwhile;?>
                     </select>
@@ -68,7 +68,7 @@ $resultado = $conexao->query($sql);
                     </div>
                 </div>
 
-                    <button class="botao extensao_botao">Adicionar Trem</button>
+                    <button class="botao extensao_botao"><i class="fa-solid fa-plus"></i> Adicionar Trem</button>
             </form>             
         </div>
     </div>     

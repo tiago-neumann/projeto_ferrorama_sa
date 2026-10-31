@@ -3,7 +3,7 @@
 session_start();
 
 //Puxa a conexao feita com o banco de dados na pasta php
-require '../../assets/php/conexao.php';
+require 'conexao.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
@@ -51,9 +51,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         } else {
             $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO usuario 
-                    (nome_usuario, email_usuario, senha_usuario) 
-                    VALUES (?, ?, ?)";
+            $sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
 
             $stmt = $conexao->prepare($sql);
 

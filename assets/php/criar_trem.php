@@ -7,8 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$prefixo = trim($_POST['prefixo_trem'] ?? '');
-$modelo  = trim($_POST['modelo_trem'] ?? '');
+$prefixo = $_POST['prefixo_trem'];
+$modelo  = $_POST['modelo_trem'];
 $ano     = filter_input(INPUT_POST, 'ano_trem', FILTER_VALIDATE_INT);
 $linha   = $_POST['linhas'] ?? '';
 $status  = $_POST['status_trem'] ?? '';

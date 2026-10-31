@@ -1,6 +1,9 @@
 <?php
 
-require_once '../../assets/php/autorizacao.php'
+require_once '../../assets/php/autorizacao.php';
+
+$sql = "SELECT s.codigo_sensor, s.tipo_sensor, s.unidade_sensor, t.modelo_trem, t.prefixo_trem FROM sensor s INNER JOIN trem t ON s.id_trem = t.id_trem;";
+$resultado = $conexao->query($sql);
 
 ?>
 
@@ -25,6 +28,7 @@ require_once '../../assets/php/autorizacao.php'
     <header>
 
         <div id="usuario"></div>
+        <div id="sensor"></div>
 
         <nav class="navbar">
             <div class="navbar_bloco">
@@ -53,39 +57,52 @@ require_once '../../assets/php/autorizacao.php'
     <main>
 
         <div class="container">
-            <div class="legendas">
-                <h6>Sensores</h6>
-                <h6>Leitura</h6>
-                <h6>Status</h6>
+            <div class="topo_sensores estilo_primario">
+                <div>
+                    <label for="pesquisa_sensor"><i class="fa-solid fa-magnifying-glass"></i></label>
+                    <input type="text" name="pesquisa_sensor" class="input_padrao estilo_secundario" placeholder="Pesquise o sensor desejado">
+                </div>
+
+                <button id="criar_sensor" class="botao"><i class="fa-solid fa-plus"></i> Adicionar sensor</button>
             </div>
 
-            <div class="dados">
-                <div class="status card">
-                    <p>Sensor <span>1</span></p>
-                    <p>ID: <span>OK</span></p>
-                </div>
-                <div class="leitura card">
-                    <p>Tipo: <span></span></p>
-                    <p>Trem: <span></span></p>
-                    <p>Leitura: <span></span></p>
-                    <p>Localização: <span></span></p>
-                </div>
-                <div class="sensores card">
-                    <p><span>OK</span></p>
+            <div class="tabela_sensores estilo_primario">
+                <div class="lista_sensores estilo_secundario">
+                    <table>
+
+                        <tr>
+                            <th>Código</th>
+                            <th>Tipo</th>
+                            <th>Unidade</th>
+                            <th>Trem vinculado</th>
+                        </tr>
+                
+                    <?php while($sensor = $resultado->fetch_assoc()): ?>
+                        <tr>
+                            <td>
+                                <button class="btn_editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <?= htmlspecialchars($sensor['codigo_sensor']) ?>
+                            </td>
+                            <td><?= htmlspecialchars($sensor['tipo_sensor']) ?></td>
+                            <td><?= htmlspecialchars($sensor['unidade_sensor']) ?></td>
+                            <td>
+                                <?= htmlspecialchars($sensor['prefixo_trem']), " / ", htmlspecialchars($sensor['modelo_trem'])?>
+                                <button class="btn_excluir"><i class="fa-solid fa-x"></i></button>
+                            </td>
+                        </tr>
+
+                    <?php endwhile; ?>    
+
+                    </table>
                 </div>
             </div>
-        </div>
+            
 
-        <div class="inputs">
-            <input type="text" class="input_padrao estilo_secundario" placeholder="Insira o ID do sensor">
-            <button class="botao">Enviar manutenção</button>
         </div>
 
     </main>
     <footer>
-        <div class="marca_dagua">
-            <small>Track Flow© 2026</small>
-        </div>
+        <small class="marca_dagua">Track Flow© 2026</small>
     </footer>
 </body>
 

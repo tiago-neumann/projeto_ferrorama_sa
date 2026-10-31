@@ -20,10 +20,10 @@ session_start();
 
             <div class="ajuste_botoes">
                 <form action="../../assets/php/logout.php" method='POST'>
-                    <button class="botao extensao_botao">Sair da sessão</button>
+                    <button class="botao extensao_botao"><i class="fa-solid fa-arrow-up-right-from-square"></i> Sair da sessão</button>
                 </form>
                 <form action="../../assets/php/excluir_conta.php" method='POST'>
-                    <button class="botao extensao_botao">Excluír conta</button>
+                    <button class="botao extensao_botao"><i class="fa-solid fa-x"></i> Excluír conta</button>
                 </form>
             </div>    
         </div>

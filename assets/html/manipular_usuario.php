@@ -60,7 +60,7 @@ if (!$usuario) {
                     </div>
                 </div>
 
-                    <button type="submit" class="botao extensao_botao">Confirmar edição</button>
+                    <button type="submit" class="botao extensao_botao"><i class="fa-solid fa-check"></i> Confirmar edição</button>
             </form>             
         </div>
     </div>     
